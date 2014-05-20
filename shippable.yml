@@ -1,0 +1,7 @@
+language: node_js
+after_success:
+  - 'echo "Installing DistelliCLI"'
+  - 'wget -qO- http://download.distelli.com/setup | sh -s ~/'
+  - 'echo "DistelliAccessToken: PPD77U74J7HN0LYEP0MW121C1" > ~/distelli.yml'
+  - 'echo "DistelliSecretKey: ot5nxp9qgenbz20ubdz4f43uj7laijzmryk4p" >> ~/distelli.yml'
+  - '~/DistelliCLI/bin/distelli push -m "Test Push from Shippable"'

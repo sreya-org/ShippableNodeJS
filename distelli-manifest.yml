@@ -1,0 +1,12 @@
+arrsingh/ShippableNodeJS:
+  Env:
+    - PORT: 8000
+  Exec:
+    - 'exec /usr/bin/node server.js $PORT'
+  PostInstall:
+    - 'npm config set loglevel verbose'
+    - 'npm config get cache'
+    - 'npm install'
+  PkgInclude:
+    - 'server.js'
+    - 'package.json'
